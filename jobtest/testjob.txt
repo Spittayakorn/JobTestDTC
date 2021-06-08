@@ -1,0 +1,25 @@
+drop database testjob;
+
+create database testjob;
+use testjob;
+
+create table user (userN int(10) unsigned auto_increment primary key,
+uid varchar(100) not null,
+upass varchar(100) not null);
+
+insert into user (uid,upass)values('3a5ece8164238d20f96dbbf5cbabd813','098f6bcd4621d373cade4e832627b4f6');
+
+create table station (station_id int(10) unsigned auto_increment primary key,
+station_name varchar(100),s_lat varchar(100) ,s_lon varchar(100) );
+
+insert into station(station_name,s_lat,s_lon)values('DTC','13.85','100.2944');
+insert into station(station_name,s_lat,s_lon)values('หอโอม','13.85','100.2945');
+insert into station(station_name,s_lat,s_lon)values('Bic C บางนา','13.85','100.2946');
+insert into station(station_name,s_lat,s_lon)values('CTL','18.5204','73.8567');
+
+create table stationpoint(
+r_id varchar(100) primary key,
+r_time datetime NOT NULL,
+r_lat DECIMAL(10,5) NOT NULL,
+r_lon DECIMAL(11,5) NOT NULL
+);
